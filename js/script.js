@@ -1,14 +1,6 @@
 var colors = ['#16a085', '#27ae60', '#2c3e50', '#f39c12', '#e74c3c', '#9b59b6', '#FB6964', '#342224', "#472E32", "#BDBB99", "#77B1A9", "#73A857"];
 
 
-function fadeAway() {
-    $("html body").animate({
-        "background-color": colors[color]
-    }, 1500, function() {
-        
-    });
-}
-
 function getQuote() {
     $.ajax({
         type: "POST",
@@ -22,9 +14,7 @@ function getQuote() {
             var color = Math.floor(Math.random() * colors.length);
             $('.quote').text(result.quote);
             $('.author').text(result.author);
-            $("html body").animate({
-                "background-color": colors[color]
-            }, 1500);
+            $("html body").css("background-color", colors[color]);
             console.log(result);
         },
         error: function(e) {
