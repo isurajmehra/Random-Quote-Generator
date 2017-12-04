@@ -2,7 +2,8 @@ var colors = ['#16a085', '#27ae60', '#2c3e50', '#f39c12', '#e74c3c', '#9b59b6', 
 var actualQuote, author;
 
 function getQuote() {
-    console.log('clicked');
+    $('.quote').html('Getting your Quote!!');
+    $('.author').html('By Developer');
     $.ajax({
         type: "POST",
         headers: {
